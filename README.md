@@ -61,3 +61,7 @@ return new class extends Migration
 };
 ```
 Use this command to run migration
+
+```
+php artisan migrate
+```
