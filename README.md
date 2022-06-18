@@ -65,3 +65,26 @@ Use this command to run migration
 ```
 php artisan migrate
 ```
+
+### Step 4 : Install Json web token (jwt)
+```
+composer require php-open-source-saver/jwt-auth
+```
+
+Next, we need to make the package configurations public. Copy the JWT configuration file from the vendor to confi/jwt.php with this command:
+
+```
+php artisan vendor:publish --provider="PHPOpenSourceSaver\JWTAuth\Providers\LaravelServiceProvider"
+```
+
+Now, we need to generate a secret key to handle the token encryption. To do so, run this command:
+
+```
+php artisan jwt:secret
+```
+
+This will update our .env file with something like this:
+```
+JWT_SECRET=xxxxxxxx
+```
+This is the key that will be used to sign our tokens.
